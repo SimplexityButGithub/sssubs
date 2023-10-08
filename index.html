@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SkidSploit Subscriptions</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .loading {
+      opacity: 0;
+      animation: fade-in 1s ease-in-out forwards;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .loaded .loading .element {
+      opacity: 0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+
+    .element:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .element:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .element:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+
+    .element:nth-child(4) {
+      animation-delay: 2s;
+    }
+
+    .embed {
+      border: 1px solid white;
+      padding: 20px;
+      margin: 10px;
+      background-color: #333;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .embed h2 {
+      color: red;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .embed p {
+      color: white;
+      font-size: 18px;
+    }
+
+    .buy-key {
+      display: none;
+    }
+
+    .features {
+      display: none;
+    }
+
+    .buy-key .embed,
+    .features .embed {
+      border: none;
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      .embed {
+        background-color: #f5f5f5;
+      }
+
+      .embed h2 {
+        color: red;
+      }
+
+      .embed p {
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">SkidSploit Subscriptions</div>
+    <div class="loading">
+      <div class="element">Features</div>
+      <div class="element">Buy</div>
+    </div>
+
+    <div class="loaded">
+      <div class="buy-key">
+        <div class="embed">
+          <h2>Buy a key</h2>
+          <p>To buy a key, please join this discord server: <a href="https://dsc.gg/dnastuff" target="_blank">dsc.gg/dnastuff</a>, and ask the founder that you want to buy a key.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="embed">
+          <h2>UNC Score</h2>
+          <p>We have a UNC score of 96, not supporting rConsole.</p>
+        </div>
+
+        <div class="embed">
+          <h2>UI</h2>
+          <p>We have a great UI for our users.</p>
+        </div>
+
+	  <div class="embed">
+          <h2>Status</h2>
+          <p>Current Status: PATCHED</p>
+        </div>
+
+
+        <div class="embed">
+          <h2>Methods</h2>
+          <p>We use bytecode decompiling execution methods & unskidded injection without any ads.</p>
+          <h2>Is the key permanent?</h2>
+          <p>Yes. Your key is permanent unless you accidentally delete the executor files. NO REFUNDS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+
+      const elements = document.querySelectorAll('.element');
+
+      elements.forEach(element => {
+        element.addEventListener('click', function() {
+          if (element.textContent === 'Buy') {
+            document.querySelector('.buy-key').style.display = 'block';
+            document.querySelector('.features').style.display = 'none';
+          } else if (element.textContent === 'Features') {
+            document.querySelector('.buy-key').style.display = 'none';
+            document.querySelector('.features').style.display = 'block';
+          } else {
+            document.querySelector('.buy-key').style.display = 'none';
+            document.querySelector('.features').style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
